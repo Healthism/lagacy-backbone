@@ -1,0 +1,45 @@
+@-webkit-keyframes obj-blink
+{
+  0%   { opacity: 1 }
+  15%  { opacity: 0 }
+  30%  { opacity: 1 }
+  100% { opacity: 1 }
+}
+
+@keyframes obj-blink
+{
+  0%   { opacity: 1 }
+  15%  { opacity: 0 }
+  30%  { opacity: 1 }
+  100% { opacity: 1 }
+}
+
+#ih-loading-view {
+  position: fixed; left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 1000;
+  .ih-loading-circle {
+    display: inline-block; opacity: 1;
+    width: 6px; height: 6px; background: white; border-radius: 50%;  
+    animation: obj-blink 1s infinite; 
+    -webkit-animation: obj-blink 1s infinite;
+    &.circle-1 { animation-delay:0; -webkit-animation-delay:0; }
+    &.circle-2 { animation-delay:0.1s; -webkit-animation-delay:0.1s; }
+    &.circle-3 { animation-delay:0.2s; -webkit-animation-delay:0.2s; }
+  }
+  .ih-loading-objects {
+    text-align: center; letter-spacing: 6px; z-index: 1;
+    position: absolute; width: 100px; left: 50%; margin-left: -50px; top: 50%; margin-top: -5px;
+  }
+  .loading-text {
+    font-size: 10px; color: white; 
+    position: absolute; left: 50%; top: 50%;
+    line-height: 30px; height: 30px; margin-top: 8px;
+    margin-left: -115px; width: 240px; text-align: center;
+    z-index: 1; text-transform: uppercase; letter-spacing: 10px;
+  }
+  .background {
+    background: #849aaf;
+    position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+    opacity: 0.4;
+  }
+}
