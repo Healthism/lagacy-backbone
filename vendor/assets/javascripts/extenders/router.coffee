@@ -34,8 +34,8 @@ class InputHealth.Router extends Backbone.Router
       @_current_view.remove() if @_current_view instanceof Backbone.View
       @_current_view = new view _.defaults(attributes, {app: this})
       @frame.$el.trigger('render-view')
-    else  
-      try @_current_view.after_initialize _.defaults(attributes, {app: this})
+    else
+      @_current_view.after_initialize _.defaults(attributes, {app: this}) if @_current_view.after_initialize instanceof Function
 
     return @_current_view
 
