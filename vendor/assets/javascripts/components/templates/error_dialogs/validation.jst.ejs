@@ -1,0 +1,19 @@
+<% error_length = _(messages).inject(function(memo, items) { return memo + items.length }, 0) %>
+<div class="ih-dialog-title">
+  <%= title %>
+</div>
+<div class='ih-dialog-body'>
+  Please check the <%= _(error_length).pluralize('field') %> below.
+  <ul class='ih-error-messages'>
+  <% _(messages).each(function(items, attribute) { %>
+    <% _(items).each(function(message) { %>
+      <li>
+        <strong class='attribute'><%- _(attribute).capitalize() %></strong> <%- message %>.
+      </li>
+    <% }) %>
+  <% }) %>
+  </ul>
+</div>
+<ul class="ih-dialog-actions">
+  <li><a class='close block btn' tabindex='1'>Close</a></li>
+</ul>

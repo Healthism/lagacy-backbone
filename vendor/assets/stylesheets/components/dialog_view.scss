@@ -1,0 +1,84 @@
+@import 'compass/utilities/general/min';
+@import "compass/css3";
+
+body.ih-fixed {
+  overflow: hidden;
+}
+
+.ih-modal {
+  position: absolute; left: 0; right: 0; bottom: 0; top: 0;
+  background-color: black;
+  @include opacity(0.4);
+}
+
+.ih-dialog {
+  position: fixed; left: 0; right: 0; bottom: 0; top: 0;
+}
+
+.ih-dialog-content-area {
+  position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%; padding: 1px; margin: -1px;
+  overflow: auto; -webkit-overflow-scrolling: touch;
+  background-color: transparent;
+  &.valign-middle {
+    height: auto; bottom: 30%;
+    @include box-orient(vertical); @include box-pack(center); @include display-box;
+  }
+}
+
+.ih-dialog-content {
+  position: relative;
+  background: white; width: 600px; padding: 20px 30px 20px; margin: 40px auto;
+  @include min-height(300px);
+  @include border-radius(10px);
+  @include box-shadow(rgba(0,0,0,0.5) 0 5px 40px);
+  &.confirm-dialog, &.alert-dialog {
+    width: 400px; min-height: 0;
+  }
+}
+
+.ih-dialog-title {
+  display: block; @include border-radius(10px 10px 0 0);
+  @include background-image(linear-gradient(top center, white 0, #eee 1));
+  border-bottom: 1px solid #bbb; margin: -20px -30px 20px;
+  padding: 20px 30px 15px; font-weight: bold;
+  font-size: 22px; line-height: 120%;
+}
+
+.ih-dialog-actions {
+  border-top: 1px solid #bbb;
+  padding: 10px 17px 5px; margin: 20px -30px -20px;
+  ul { margin: 0; }
+  li { padding-bottom: 5px; }
+  .btn { font-size: 16px; line-height: 20px; }
+  &.alert {
+
+  }
+  &.confirm {
+
+  }
+}
+
+.ih-dialog-body {
+  font-size: 17px; line-height: 130%;
+  p { margin: 0 0 8px; }
+}
+
+.ih-error-messages {
+  margin: 10px 30px;
+  font-size: 18px;
+  li { list-style: decimal; margin-bottom: 5px; }
+}
+
+
+.ih-dialog.negative {
+  .ih-dialog-title {
+    @include background-image(linear-gradient(top center, white 0, #fdd 1));
+    border-bottom-color: #daa;
+    color: #700;
+  }
+  .ih-modal {
+    background-color: #633;
+    @include opacity(0.7);
+  }
+}

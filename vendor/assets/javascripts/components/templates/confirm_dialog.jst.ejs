@@ -1,0 +1,11 @@
+<div class="ih-dialog-title">
+  <%= title %>
+</div>
+<div class='ih-dialog-body'>
+  <%= message %>
+</div>
+<ul class="ih-dialog-actions confirm small-block-grid-1 medium-block-grid-<%- buttons.length %>">
+  <% _(buttons).each(function(button) { %>
+  <li><a class='<%- button.classes %> block btn' tabindex='1'><%= button.text %></a></li>
+  <% }) %>
+</ul>
