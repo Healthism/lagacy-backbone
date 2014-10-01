@@ -1,5 +1,6 @@
 class InputHealth.Collection extends Backbone.Collection
   is_synced: false
+  model: InputHealth.Model
   class_name: 'Collection'
 
   options: {}
@@ -18,7 +19,7 @@ class InputHealth.Collection extends Backbone.Collection
     @class_name = @__proto__?.constructor.name || @class_name
     @on 'sync', @_mark_as_synced, this
 
-  as_json: -> @map (model) -> model.as_json()  
+  as_json: -> @map (model) -> model.as_json()
 
   fetch: (options = {}) ->
     if options.silent

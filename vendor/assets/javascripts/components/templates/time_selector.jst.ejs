@@ -1,0 +1,26 @@
+<div class='ih-datetime-field'>
+  <select class='hour ih-datetime-select'>
+  <% _(_.range(1, 13)).each(function(hour) { %>
+    <option value='<%= hour %>'><%= hour %></option>
+  <% }) %>
+  </select>
+  <span class='ih-datetime-value'><%- hour %></span>
+</div>
+<span class='ih-divider'>:</span>
+<div class='ih-datetime-field'>
+  <select class='minutes ih-datetime-select'>
+  <% _(_.range(0, 60, 5)).each(function(minute) { %>
+    <option value='<%= minute %>'><%= ("0" + minute).substr(-2, 2) %></option>
+  <% }) %>
+  </select>
+  <span class='ih-datetime-value'><%- min %></span>
+</div>
+
+<span class='ih-divider'>:</span>
+<div class='ih-datetime-field'>
+  <select class='ampm ih-datetime-select'>
+    <option value='AM'>AM</option>
+    <option value='PM'>PM</option>
+  </select>
+  <span class='ih-datetime-value'><%- am_pm %></span>
+</div>

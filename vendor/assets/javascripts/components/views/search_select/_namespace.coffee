@@ -1,0 +1,1 @@
+InputHealth.SearchSelect = {}

@@ -8,7 +8,7 @@
   <% _(messages).each(function(items, attribute) { %>
     <% _(items).each(function(message) { %>
       <li>
-        <%- message %>.
+        <strong class='attribute'><%- _(attribute).capitalize() %></strong> <%- message %>.
       </li>
     <% }) %>
   <% }) %>

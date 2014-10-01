@@ -21,8 +21,9 @@ body.ih-fixed {
   overflow: auto; -webkit-overflow-scrolling: touch;
   background-color: transparent;
   &.valign-middle {
-    height: auto; bottom: 30%;
+    height: auto; bottom: 0;
     @include box-orient(vertical); @include box-pack(center); @include display-box;
+    .ih-dialog-content { margin-bottom: 20%; }
   }
 }
 

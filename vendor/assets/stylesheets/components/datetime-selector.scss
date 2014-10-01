@@ -1,0 +1,27 @@
+@import "compass/css3";
+
+.ih-datetime-selector {
+  padding: 0; font-size: 0; text-align: center;
+
+  .ih-divider, .ih-datetime-field {
+    @include inline-block;
+    width: 5%; height: 24px; line-height: 24px;
+    font-size: 16px;
+  }
+
+  .ih-datetime-field {
+    position: relative;
+    text-align: center;
+    width: 30%; background: none; margin: 0; border: none;
+    &.date  { width: 20%; }
+    &.month { width: 40%; }
+    &.year  { width: 30%; }
+  }
+
+  .ih-datetime-select {
+    position: absolute; margin: 0;
+    @include appearance(none); color: transparent;
+    left: 0; right: 0; top: 0; bottom: 0; background: none; border: none;
+    outline: none; cursor: text;
+  }
+}

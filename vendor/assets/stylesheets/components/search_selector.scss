@@ -1,0 +1,30 @@
+@import "compass/css3";
+
+.ih-search-selector {
+  .search-form {
+    .search-icon { position: absolute; line-height: 26px; margin-left: 3px; }
+    .search-field {
+      display: block; width: 100%;
+      border: none; line-height: 16px;
+      font-size: 14px; padding: 5px 5px 5px 26px;
+      margin: 0;
+    }
+  }
+  .searched-items{
+     border-top: 1px solid #ccc; padding-top: 5px; margin-top: 5px;
+  }
+  .selector-item {
+    padding: 6px 8px; font-size: 14px;
+    outline: none; @include border-radius(4px);
+    &.focus { background-color: #E9F0F5; color: #06a; }
+    &:active {
+      @include background-image(linear-gradient(top center, #006EC9 0%, #004D99 100%));
+      color: white;
+    }
+  }
+  .helper {
+    font-size: 13px; text-align: center;
+    padding: 15px 0; color: #666;
+    .icon { font-size: 24px; display: block; margin-bottom: 5px; color: #ddd; }
+  }
+}

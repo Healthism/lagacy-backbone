@@ -1,0 +1,33 @@
+.ih-calendar-view {
+  text-align: center;
+  .calendar-navigation {
+    position: relative;
+    height: 20px; line-height: 20px; margin-bottom: 5px;
+    .month-nav {
+      position: absolute; top: 50%; height: 20px; line-height: 20px;
+      margin-top: -10px;
+      &.previous-month { left: 0; }
+      &.next-month { right: 0; }
+    }
+    .current-month { font-weight: bold; font-size: 14px }
+  }
+  .weekday-names {
+    margin: 5px 0 5px; font-weight: bold; color: #999;
+    border-bottom: 1px solid #ddd; padding-bottom: 5px;
+    font-size: 10px;
+    li { padding: 0; }
+  }
+
+  .day-list {
+    margin: 0; text-align: center;
+  }
+
+  .day-item {
+    padding: 0; line-height: 20;
+    line-height: 18px;
+    &.active { background: #0071bc; color: white; font-weight: bold; }
+  }
+  .other-month {
+    color: #bbb;
+  }
+}

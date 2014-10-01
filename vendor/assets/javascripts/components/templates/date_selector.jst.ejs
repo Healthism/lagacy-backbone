@@ -1,0 +1,27 @@
+<div class='ih-datetime-field date'>
+  <select class='date ih-datetime-select'>
+  <% _(_.range(1, 32)).each(function(date) { %>
+    <option value='<%= date %>'><%= date %></option>
+  <% }) %>
+  </select>
+  <span class='ih-datetime-value'><%- date %></span>
+</div>
+<span class='ih-divider'>-</span>
+<div class='ih-datetime-field month'>
+  <select class='month ih-datetime-select'>
+  <% _(this.months).each(function(month, index) { %>
+    <option value='<%= index+1 %>'><%= month %></option>
+  <% }) %>
+  </select>
+  <span class='ih-datetime-value'><%- this.months[month-1] %></span>
+</div>
+
+<span class='ih-divider'>-</span>
+<div class='ih-datetime-field year'>
+  <select class='year ih-datetime-select'>
+    <% _(this.years).each(function(year) { %>
+    <option value='<%= year %>'><%= year %></option>
+    <% }) %>
+  </select>
+  <span class='ih-datetime-value'><%- year %></span>
+</div>
